@@ -1,0 +1,61 @@
+{
+  "name": "node-elm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "cangdu <1264889788@qq.com>",
+  "license": "GPL",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development supervisor --harmony index.js",
+    "local": "cross-env NODE_ENV=local supervisor  --harmony index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'node-elm'",
+    "stop": "cross-env NODE_ENV=production pm2 stop index.js --name 'node-elm'",
+    "restart": "cross-env NODE_ENV=production pm2 restart index.js --node-args='--harmony' --name 'node-elm'"
+  },
+  "repository": {
+    "type": "git",  
+    "url": "https://github.com/bailicangdu/node-elm"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.24.0", // 上面几个都是babel的编译插件啦
+    "bluebird": "^3.5.0", // 用promise实现ajax的一个库
+    "captchapng": "0.0.1",// 将验证码生成png的一个插件
+    "config-lite": "^1.5.0",// 通过查找你项目中的 config 目录 将default文件作为你的项目的配置
+    "connect-flash": "^0.1.1",// 消息被写入flash并在显示给用户后清除。Flash通常与重定向结合使用，确保消息可用于要呈现的下一页
+    "connect-history-api-fallback": "^1.3.0",// 防止单页面使用history时的刷新页面返回 404 的情况
+    "connect-mongo": "^1.3.2",// 链接monogo
+    "cookie-parser": "^1.4.3",// 解析Cookie标题并填充req.cookies由Cookie名称键入的对象
+    "cross-env": "^5.0.0",// 设置环境变量的 见上面的script字段
+    "express": "^4.15.2",// 
+    "express-session": "^1.15.2",// 
+    "express-winston": "^2.3.0",// express-winston为您的express.js应用程序的请求和错误日志记录提供中间件
+    "formidable": "^1.1.1",// 解析表单数据，尤其是文件上传 专注于上传和编码图像和视频。
+    "gm": "^1.23.0",// 一个图片处理的工具
+    "marked": "^0.3.6",// markdown文件的处理
+    "moment": "^2.18.1",// 轻量级JavaScript日期库，用于分析，验证，操作和格式化日期。
+    "mongodb": "^2.2.25",// 
+    "mongoose": "^4.9.3",// 
+    "node-fetch": "^1.6.3",// 一个访问页面的接口的工具
+    "pinyin": "^2.8.3",// 汉字拼音转换工具。
+    "pm2": "^2.8.0",// PM2是具有内置负载平衡器的Node.js应用程序的生产过程管理器。它使您可以永久保持应用程序的活动状态，无需停机即可重新加载应用程序，并且可以方便常见的系统管理任务
+    "qiniu": "^6.1.13",// 七牛的一个api转换文档工具
+    "sha1": "^1.1.1",// 
+    "supervisor": "^0.12.0",// 和 browser-sync 一样的东西 不过用于node后台
+    "time-formater": "^1.0.1",// 
+    "time-stamp": "^2.0.0",// 
+    "winston": "^2.3.1"// 用来做日志处理的
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0"
+  }
+}
