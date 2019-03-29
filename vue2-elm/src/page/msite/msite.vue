@@ -8,7 +8,7 @@
 	    		</svg>
     		</router-link>
 			<router-link to="/home" slot="msite-title" class="msite_title">
-				<span class="title_text ellipsis">二手交易平台</span>
+				<span class="title_text ellipsis">购物平台</span>
 			</router-link>
     	</head-top>
     	<nav class="msite_nav">
