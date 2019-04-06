@@ -108,14 +108,20 @@ export default class BaseComponent {
 					img_id = await this.getId('img_id');
 				}catch(err){
 					console.log('获取图片id失败');
-					fs.unlink(files.file.path);
+					fs.unlink(files.file.path, (err) => {
+						if (err) throw err;
+						console.log('文件已删除');
+					});
 					reject('获取图片id失败')
 				}
 				const imgName = (new Date().getTime() + Math.ceil(Math.random()*10000)).toString(16) + img_id;
 				const fullName = imgName + path.extname(files.file.name);
 				const repath = './public/img/' + fullName;
 				try{
-					await fs.rename(files.file.path, repath);
+					await fs.rename(files.file.path, repath, (err) => {
+						if (err) throw err;
+						console.log('重命名完成');
+					});
 					gm(repath)
 					.resize(200, 200, "!")
 					.write(repath, async (err) => {
@@ -128,7 +134,10 @@ export default class BaseComponent {
 					})
 				}catch(err){
 					console.log('保存图片失败', err);
-					fs.unlink(files.file.path)
+					fs.unlink(files.file.path, (err) => {
+						if (err) throw err;
+						console.log('文件已删除');
+					})
 					reject('保存图片失败')
 				}
 			});
@@ -145,7 +154,10 @@ export default class BaseComponent {
 					img_id = await this.getId('img_id');
 				}catch(err){
 					console.log('获取图片id失败');
-					fs.unlink(files.file.path);
+					fs.unlink(files.file.path, (err) => {
+						if (err) throw err;
+						console.log('文件已删除');
+					});
 					reject('获取图片id失败')
 				}
 				const imgName = (new Date().getTime() + Math.ceil(Math.random()*10000)).toString(16) + img_id;
@@ -153,14 +165,23 @@ export default class BaseComponent {
 				const repath = './public/img/' + imgName + extname;
 				try{
 					const key = imgName + extname;
-					await fs.rename(files.file.path, repath);
+					await fs.rename(files.file.path, repath, (err) => {
+						if (err) throw err;
+						console.log('重命名完成');
+					});
 					const token = this.uptoken('node-elm', key);
 					const qiniuImg = await this.uploadFile(token.toString(), key, repath);
-					fs.unlink(repath);
+					fs.unlink(repath, (err) => {
+						if (err) throw err;
+						console.log('文件已删除');
+					});
 					resolve(qiniuImg)
 				}catch(err){
 					console.log('保存至七牛失败', err);
-					fs.unlink(files.file.path)
+					fs.unlink(files.file.path, (err) => {
+						if (err) throw err;
+						console.log('文件已删除');
+					})
 					reject('保存至七牛失败')
 				}
 			});
