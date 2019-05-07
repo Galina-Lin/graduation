@@ -1,6 +1,6 @@
 'use strict';
 
-/* 直接返回是食品分类的食品分类的列表出去 */
+/* 直接返回是商品分类的商品分类的列表出去 */
 
 import EntryModel from '../../models/v2/entry'
 

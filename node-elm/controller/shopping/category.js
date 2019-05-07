@@ -11,7 +11,7 @@ class Category extends BaseComponent{
 	constructor(){
 		super()
 	}
-	//获取所有餐馆分类和数量
+	//获取所有商店分类和数量
 	async getCategories(req, res, next){
 		try{
 			const categories = await CategoryModel.find({}, '-_id');

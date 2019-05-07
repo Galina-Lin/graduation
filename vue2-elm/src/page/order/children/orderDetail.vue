@@ -53,7 +53,7 @@
                     <section class="item_style">
                         <p class="item_left">配送方式：</p>
                         <div class="item_right">
-                            <p>顺丰快递</p>
+                            <p>中通快递</p>
                         </div>
                     </section>
                 </section>

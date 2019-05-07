@@ -44,7 +44,7 @@ class Carts extends AddressComponent{
 			}
 			let payments; //付款方式
 			let cart_id; //购物车id
-			let restaurant; //餐馆详情
+			let restaurant; //商店详情
 			let deliver_time; //配送时间
 			let delivery_reach_time; //到达时间
 			let from = geohash.split(',')[0] + ',' +  geohash.split(',')[1];
@@ -69,7 +69,7 @@ class Carts extends AddressComponent{
 				return 
 			}
 			const deliver_amount = 4;
-			let price = 0; //食品价格
+			let price = 0; //商品价格
 			entities[0].map(item => {
 				price += item.price * item.quantity;
 				if (item.packing_fee) {
@@ -79,7 +79,7 @@ class Carts extends AddressComponent{
 					return item.name = item.name + '-' + item.specs[0];
 				}
 			})
-			//食品总价格
+			//商品总价格
 			const total = price + this.extra[0].price * this.extra[0].quantity + deliver_amount;
 			//是否支持发票
 			let invoice = {

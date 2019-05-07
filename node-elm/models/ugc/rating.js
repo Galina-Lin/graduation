@@ -70,7 +70,7 @@ rateSchema.statics.getData = async function (restaurant_id, type){
 	try{
 		const data = await this.findOne({restaurant_id}, '-_id');
 		if (!data) {
-			throw new Error('未找到当前餐馆的评论数据');
+			throw new Error('未找到当前商店的评论数据');
 		}else{
 			return data[type]
 		}

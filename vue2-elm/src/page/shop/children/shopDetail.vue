@@ -18,7 +18,7 @@
         </section> -->
         <!-- <section class="shop_status_container">
             <router-link to="/shop/shopDetail/shopSafe" class="shop_status_header">
-                <span class="shop_detail_title">食品监督安全公示</span>
+                <span class="shop_detail_title">商品监督安全公示</span>
                 <div>
                     <span class="identification_detail">企业认证详情</span>
                     <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" version="1.1" class="description_arrow" >

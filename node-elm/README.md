@@ -53,7 +53,7 @@ npm run dev
 
 # 效果演示
 
-#### (可在后台管理系统添加商铺，食品等数据，并在前端地址查看效果)
+#### (可在后台管理系统添加商店，商品等数据，并在前端地址查看效果)
 
 ### 前端网址
 [前端网址戳这里](http://cangdu.org:8001/)（请用chrome手机模式预览）
@@ -74,13 +74,13 @@ npm run dev
 - [x] 城市列表 -- 完成
 - [x] 搜索地址 -- 完成
 - [x] 上传图片 -- 完成
-- [x] 添加商铺 -- 完成
-- [x] 添加食品 -- 完成
+- [x] 添加商店 -- 完成
+- [x] 添加商品 -- 完成
 - [x] 测量距离 -- 完成
-- [x] 搜索美食，餐馆 -- 完成
+- [x] 搜索美食，商店 -- 完成
 - [x] 根据距离、销量、评分、特色菜、配送方式等进行排序和筛选 -- 完成
 - [x] 评价列表 -- 完成
-- [x] 食品详情 -- 完成
+- [x] 商品详情 -- 完成
 - [x] 商家详情 -- 完成
 - [x] 购物车功能 -- 完成
 - [x] 登录、注册 -- 完成
@@ -90,8 +90,8 @@ npm run dev
 - [x] 下单  -- 完成 ✨✨
 - [x] 订单信息 -- 完成
 - [x] 红包 -- 完成
-- [x] 商铺管理 -- 完成
-- [x] 食品管理 -- 完成
+- [x] 商店管理 -- 完成
+- [x] 商品管理 -- 完成
 - [x] 管理员权限验证 -- 完成
 - [x] 超级管理员 -- 完成
 - [x] 订单管理 -- 完成
@@ -128,11 +128,11 @@ npm run dev
 ```
 .
 ├── InitData                        初始化数据
-│   ├── activity.js                 餐馆活动
-│   ├── category.js                 餐馆分类
+│   ├── activity.js                 商店活动
+│   ├── category.js                 商店分类
 │   ├── cities.js                   城市列表
 │   ├── delivery.js                 配送方式
-│   ├── entry.js                    食品分类
+│   ├── entry.js                    商品分类
 │   ├── explain.js                  解释说明
 │   ├── hongbao.js                  红包
 │   ├── payments.js                 支付方式
@@ -152,9 +152,9 @@ npm run dev
 │   ├── promotion
 │   │   └── hongbao.js              红包
 │   ├── shopping
-│   │   ├── category.js             餐馆分类
-│   │   ├── food.js                 食品
-│   │   └── shop.js                 餐馆
+│   │   ├── category.js             商店分类
+│   │   ├── food.js                 商品
+│   │   └── shop.js                 商店
 │   ├── statis
 │   │   └── statis.js               数据统计
 │   ├── ugc
@@ -168,7 +168,7 @@ npm run dev
 │   │   ├── remark.js               备注
 │   │   └── search.js               搜索
 │   ├── v2
-│   │   ├── entry.js                食品分类
+│   │   ├── entry.js                商品分类
 │   │   └── user.js                 用户信息
 │   ├── v3
 │   │   └── explain.js              解析说明
@@ -189,11 +189,11 @@ npm run dev
 │   ├── promotion
 │   │   └── hongbao.js              红包模型
 │   ├── shopping
-│   │   ├── activity.js             餐馆活动模型
-│   │   ├── category.js             餐馆分类模型
+│   │   ├── activity.js             商店活动模型
+│   │   ├── category.js             商店分类模型
 │   │   ├── delivery.js             配送方式模型
-│   │   ├── food.js                 食品模型
-│   │   └── shop.js                 餐馆模型
+│   │   ├── food.js                 商品模型
+│   │   └── shop.js                 商店模型
 │   ├── statis
 │   │   └── statis.js               数据统计模型
 │   ├── ugc
@@ -205,7 +205,7 @@ npm run dev
 │   │   ├── payments.js             付款方式模型
 │   │   └── remark.js               备注模型
 │   ├── v2
-│   │   ├── entry.js                食品分类模型
+│   │   ├── entry.js                商品分类模型
 │   │   ├── user.js                 用户模型
 │   │   └── userInfo.js             用户信息模型
 │   ├── v3
@@ -225,13 +225,13 @@ npm run dev
 │   ├── member.js                   会员卡
 │   ├── payapi.js                   付款
 │   ├── promotion.js                红包
-│   ├── shopping.js                 餐馆、食品、Menu
+│   ├── shopping.js                 商店、商品、Menu
 │   ├── statis.js                   数据统计
 │   ├── ugc.js                      评论
 │   ├── v1.js                       城市、用户、收获地址
 │   ├── v2.js                       登陆、退出
 │   ├── v3.js                       解释说明
-│   └── v4.js                       餐馆
+│   └── v4.js                       商店
 ├── screenshots                     项目截图
 ├── views   
 ├── .babelrc 

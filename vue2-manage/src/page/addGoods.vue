@@ -199,7 +199,7 @@
     			this.restaurant_id = Math.ceil(Math.random()*10);
     			this.$msgbox({
 		          title: '提示',
-		          message: '添加商品需要选择一个商铺，先去就去选择商铺吗？',
+		          message: '添加商品需要选择一个商店，先去就去选择商店吗？',
 		          showCancelButton: true,
 		          confirmButtonText: '确定',
 		          cancelButtonText: '取消',

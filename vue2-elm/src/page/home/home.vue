@@ -1,7 +1,7 @@
 <template>
   	<div>
         <head-top signin-up='home'>
-            <span slot='logo' class="head_logo"  @click="reload">商品购物平台</span>
+            <span slot='logo' class="head_logo"  @click="reload">商品电商平台</span>
         </head-top>
         <nav class="city_nav">
             <div class="city_tip">

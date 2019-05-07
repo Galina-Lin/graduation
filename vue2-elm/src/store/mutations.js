@@ -145,7 +145,7 @@ export default {
 	[RETSET_NAME](state,username) {
 		state.userInfo = Object.assign({}, state.userInfo,{username})
 	},
-	//保存商铺id
+	//保存商店id
 	[SAVE_SHOPID](state, shopid) {
 		state.shopid = shopid;
 	},

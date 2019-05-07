@@ -14,19 +14,19 @@
                       <el-form-item label="商品名称">
                         <span>{{ props.row.name }}</span>
                       </el-form-item>
-                      <el-form-item label="餐馆名称">
+                      <el-form-item label="商店名称">
                         <span>{{ props.row.restaurant_name }}</span>
                       </el-form-item>
                       <el-form-item label="商品 ID">
                         <span>{{ props.row.item_id }}</span>
                       </el-form-item>
-                      <el-form-item label="餐馆 ID">
+                      <el-form-item label="商店 ID">
                         <span>{{ props.row.restaurant_id }}</span>
                       </el-form-item>
                       <el-form-item label="商品介绍">
                         <span>{{ props.row.description }}</span>
                       </el-form-item>
-                      <el-form-item label="餐馆地址">
+                      <el-form-item label="商店地址">
                         <span>{{ props.row.restaurant_address }}</span>
                       </el-form-item>
                       <el-form-item label="商品评分">
@@ -384,7 +384,7 @@
                         });
                     }
                 }catch(err){
-                    console.log('更新餐馆信息失败', err);
+                    console.log('更新商店信息失败', err);
                 }
             },
         },

@@ -37,7 +37,7 @@ const routes = [
 		},{
 			path: '/addShop',
 			component: addShop,
-			meta: ['添加数据', '添加商铺'],
+			meta: ['添加数据', '添加商店'],
 		},{
 			path: '/addGoods',
 			component: addGoods,

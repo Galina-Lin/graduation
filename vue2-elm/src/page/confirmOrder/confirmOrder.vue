@@ -28,10 +28,10 @@
                 <p class="deliver_text">送达时间</p>
                 <section class="deliver_time">
                     <p>尽快送达 | 可联系商家商榷</p>
-                    <p v-if="checkoutData.cart.is_deliver_by_fengniao">顺丰快递</p>
+                    <p v-if="checkoutData.cart.is_deliver_by_fengniao">中通快递</p>
                 </section>
             </section>
-<!--             <section class="pay_way container_style">
+            <!-- <section class="pay_way container_style">
                 <header class="header_style">
                     <span>支付方式</span>
                     <div class="more_type" @click="showPayWayFun">
@@ -156,7 +156,7 @@
             this.shopId = this.$route.query.shopId;
             this.INIT_BUYCART();
             this.SAVE_SHOPID(this.shopId);
-            //获取当前商铺购物车信息
+            //获取当前商店购物车信息
             this.shopCart = this.cartList[this.shopId];
         },
         mounted(){

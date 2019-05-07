@@ -63,7 +63,7 @@
         },
         created(){
             this.initData();
-            //清除购物车中当前商铺的信息
+            //清除购物车中当前商店的信息
             if (this.shopid) {
                 this.CLEAR_CART(this.shopid);
             }

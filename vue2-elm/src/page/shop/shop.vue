@@ -90,7 +90,7 @@
                                             <strong class="menu_item_title">{{item.name}}</strong>
                                             <!-- <span class="menu_item_description">{{item.description}}</span> -->
                                         </section>
-                                        <span class="menu_detail_header_right" @click="showTitleDetail(index)"></span>
+                                        <!-- <span class="menu_detail_header_right" @click="showTitleDetail(index)"></span> -->
                                         <p class="description_tip" v-if="index == TitleDetailIndex">
                                             <span>{{item.name}}</span>
                                             {{item.description}}
@@ -331,9 +331,9 @@
                 shopId: null, //商店id值
                 showLoading: true, //显示加载动画
                 changeShowType: 'food',//切换显示商品或者评价
-                shopDetailData: null, //商铺详情
+                shopDetailData: null, //商店详情
                 showActivities: false, //是否显示活动详情
-                menuList: [], //食品列表
+                menuList: [], //商品列表
                 menuIndex: 0, //已选菜单索引值，默认为0
                 menuIndexChange: true,//解决选中index时，scroll监听事件重复判断设置index的bug
                 shopListTop: [], //商品列表的高度集合
@@ -351,8 +351,8 @@
                 preventRepeatRequest: false,// 防止多次触发数据请求
                 ratingTagName: '',//评论的类型
                 loadRatings: false, //加载更多评论是显示加载组件
-                foodScroll: null,  //食品列表scroll
-                showSpecs: false,//控制显示食品规格
+                foodScroll: null,  //商品列表scroll
+                showSpecs: false,//控制显示商品规格
                 specsIndex: 0, //当前选中的规格索引值
                 choosedFoods: null, //当前选中视频数据
                 showDeleteTip: false, //多规格商品点击减按钮，弹出提示框
@@ -431,13 +431,13 @@
                     // 记录当前经度纬度进入vuex
                     this.RECORD_ADDRESS(res);
                 }
-                //获取商铺信息
+                //获取商店信息
                 this.shopDetailData = await shopDetails(this.shopId, this.latitude, this.longitude);
-                //获取商铺食品列表
+                //获取商店商品列表
                 this.menuList = await foodMenu(this.shopId);
                 //评论列表
                 this.ratingList = await getRatingList(this.shopId, this.ratingOffset);
-                //商铺评论详情
+                //商店评论详情
                 this.ratingScoresData = await ratingScores(this.shopId);
                 //评论Tag列表
                 this.ratingTagsList = await ratingTags(this.shopId);
@@ -445,7 +445,7 @@
                 //隐藏加载动画
                 this.hideLoading();
             },
-            //获取食品列表的高度，存入shopListTop
+            //获取商品列表的高度，存入shopListTop
             getFoodListHeight(){
                 const listContainer = this.$refs.menuFoodList;
                 const listArr = Array.from(listContainer.children[0].children);
@@ -454,7 +454,7 @@
                 });
                 this.listenScroll(listContainer)
             },
-            //当滑动食品列表时，监听其scrollTop值来设置对应的食品列表标题的样式
+            //当滑动商品列表时，监听其scrollTop值来设置对应的商品列表标题的样式
             listenScroll(element){
                 this.foodScroll = new BScroll(element, {
                     probeType: 3,
@@ -487,7 +487,7 @@
             showActivitiesFun(){
                 this.showActivities = !this.showActivities;
             },
-            //点击左侧食品列表标题，相应列表移动到最顶层
+            //点击左侧商品列表标题，相应列表移动到最顶层
             chooseMenu(index){
                 this.menuIndex = index;
                 //menuIndexChange解决运动时listenScroll依然监听的bug
@@ -504,12 +504,12 @@
                     this.TitleDetailIndex = index;
                 }
             },
-            //加入购物车，所需7个参数，商铺id，食品分类id，食品id，食品规格id，食品名字，食品价格，食品规格
+            //加入购物车，所需7个参数，商店id，商品分类id，商品id，商品规格id，商品名字，商品价格，商品规格
             addToCart(category_id, item_id, food_id, name, price, specs){
                 console.log(category_id, item_id, food_id, name, price, specs);
                 this.ADD_CART({shopid: this.shopId, category_id, item_id, food_id, name, price, specs});
             },
-            //移出购物车，所需7个参数，商铺id，食品分类id，食品id，食品规格id，食品名字，食品价格，食品规格
+            //移出购物车，所需7个参数，商店id，商品分类id，商品id，商品规格id，商品名字，商品价格，商品规格
             removeOutCart(category_id, item_id, food_id, name, price, specs){
                 this.REDUCE_CART({shopid: this.shopId, category_id, item_id, food_id, name, price, specs});
             },
@@ -672,7 +672,7 @@
             shopCart: function (value){
                 this.initCategoryNum();
             },
-            //购物车列表发生变化，没有商铺时，隐藏
+            //购物车列表发生变化，没有商店时，隐藏
             cartFoodList: function (value){
                 if(!value.length){
                     this.showCartList = false;

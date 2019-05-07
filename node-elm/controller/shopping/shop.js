@@ -14,7 +14,7 @@ class Shop extends AddressComponent{
 		this.getRestaurants = this.getRestaurants.bind(this);
 		this.searchResaturant = this.searchResaturant.bind(this);
 	}
-	//添加商铺
+	//添加商店
 	async addShop(req, res, next){
 		let restaurant_id;
 		try{
@@ -39,9 +39,9 @@ class Shop extends AddressComponent{
 				}else if(!fields.latitude || !fields.longitude){
 					throw new Error('商店位置信息错误');
 				}else if(!fields.image_path){
-					throw new Error('必须上传商铺图片');
+					throw new Error('必须上传商店图片');
 				}else if(!fields.category){
-					throw new Error('必须上传食品种类');
+					throw new Error('必须上传商品种类');
 				}
 			}catch(err){
 				console.log('前台参数出错', err.message);
@@ -102,7 +102,7 @@ class Shop extends AddressComponent{
 					color: "57A9FF",
 					id: 1,
 					is_solid: true,
-					text: "蜂鸟专送"
+					text: "中通快递"
 				}})
 			}
 			//商店支持的活动
@@ -129,7 +129,7 @@ class Shop extends AddressComponent{
 			})
 			if (fields.bao) {
 				newShop.supports.push({
-					description: "已加入“外卖保”计划，食品安全有保障",
+					description: "已加入“外卖保”计划，商品安全有保障",
 					icon_color: "999999",
 					icon_name: "保",
 					id: 7,
@@ -155,7 +155,7 @@ class Shop extends AddressComponent{
 				})
 			}
 			try{
-				//保存数据，并增加对应食品种类的数量
+				//保存数据，并增加对应商品种类的数量
 				const shop = new ShopModel(newShop);
 				await shop.save();
 				CategoryHandle.addCategory(fields.category)
@@ -163,20 +163,20 @@ class Shop extends AddressComponent{
 				Food.initData(restaurant_id);
 				res.send({
 					status: 1,
-					sussess: '添加餐馆成功',
+					sussess: '添加商店成功',
 					shopDetail: newShop
 				})
 			}catch(err){
-				console.log('商铺写入数据库失败');
+				console.log('商店写入数据库失败');
 				res.send({
 					status: 0,
 					type: 'ERROR_SERVER',
-					message: '添加商铺失败',
+					message: '添加商店失败',
 				})
 			}
 		})
 	}
-	//获取餐馆列表
+	//获取商店列表
 	async getRestaurants(req, res, next){
 		const {
 			latitude,
@@ -208,7 +208,7 @@ class Shop extends AddressComponent{
 			return
 		}
 		let filter = {};
-		//获取对应食品种类
+		//获取对应商品种类
 		if (restaurant_category_ids.length && Number(restaurant_category_ids[0])) {
 			const category =  await CategoryHandle.findById(restaurant_category_ids[0]);
 			Object.assign(filter, {category})
@@ -290,7 +290,7 @@ class Shop extends AddressComponent{
 			})
 		}
 	}
-	//搜索餐馆
+	//搜索商店
 	async searchResaturant(req, res, next){
 		const {geohash, keyword} = req.query;
 		
@@ -303,23 +303,23 @@ class Shop extends AddressComponent{
 			}
 			res.send(restaurants);
 		}catch(err){
-			console.log('搜索餐馆数据失败');
+			console.log('搜索商店数据失败');
 			res.send({
 				status: 0,
 				type: 'ERROR_DATA',
-				message: '搜索餐馆数据失败'
+				message: '搜索商店数据失败'
 			})
 		}
 	}
-	//获取餐馆详情
+	//获取商店详情
 	async getRestaurantDetail(req, res, next){
 		const restaurant_id = req.params.restaurant_id;
 		if (!restaurant_id || !Number(restaurant_id)) {
-			console.log('获取餐馆详情参数ID错误');
+			console.log('获取商店详情参数ID错误');
 			res.send({
 				status: 0,
 				type: 'ERROR_PARAMS',
-				message: '餐馆ID参数错误',
+				message: '商店ID参数错误',
 			})
 			return
 		}
@@ -327,15 +327,15 @@ class Shop extends AddressComponent{
 			const restaurant = await ShopModel.findOne({id: restaurant_id}, '-_id');
 			res.send(restaurant)
 		}catch(err){
-			console.log('获取餐馆详情失败', err);
+			console.log('获取商店详情失败', err);
 			res.send({
 				status: 0,
 				type: 'GET_DATA_ERROR',
-				message: '获取餐馆详情失败'
+				message: '获取商店详情失败'
 			})
 		}
 	}
-	// 获取餐馆数量
+	// 获取商店数量
 	async getShopCount(req, res, next){
 		try{
 			const count = await ShopModel.count();
@@ -344,20 +344,20 @@ class Shop extends AddressComponent{
 				count,
 			})
 		}catch(err){
-			console.log('获取餐馆数量失败', err);
+			console.log('获取商店数量失败', err);
 			res.send({
 				status: 0,
 				type: 'ERROR_TO_GET_COUNT',
-				message: '获取餐馆数量失败'
+				message: '获取商店数量失败'
 			})
 		}
 	}
-	// 更新商铺信息
+	// 更新商店信息
 	async updateshop(req, res, next){
 		const form = new formidable.IncomingForm();
 		form.parse(req, async (err, fields, files) => {
 			if (err) {
-				console.log('获取商铺信息form出错', err);
+				console.log('获取商店信息form出错', err);
 				res.send({
 					status: 0,
 					type: 'ERROR_FORM',
@@ -375,17 +375,17 @@ class Shop extends AddressComponent{
 			}
 			try{
 				if (!name) {
-					throw new Error('餐馆名称错误');
+					throw new Error('商店名称错误');
 				}else if(!address){
-					throw new Error('餐馆地址错误');
+					throw new Error('商店地址错误');
 				}else if(!phone){
-					throw new Error('餐馆联系电话错误');
+					throw new Error('商店联系电话错误');
 				}else if(!category){
-					throw new Error('餐馆分类错误');
+					throw new Error('商店分类错误');
 				}else if(!id || !Number(id)){
-					throw new Error('餐馆ID错误');
+					throw new Error('商店ID错误');
 				}else if(!image_path){
-					throw new Error('餐馆图片地址错误');
+					throw new Error('商店图片地址错误');
 				}
 				let newData;
 				if (latitude && longitude) {
@@ -396,19 +396,19 @@ class Shop extends AddressComponent{
 				await ShopModel.findOneAndUpdate({id}, {$set: newData});
 				res.send({
 					status: 1,
-					success: '修改商铺信息成功',
+					success: '修改商店信息成功',
 				})
 			}catch(err){
 				console.log(err.message, err);
 				res.send({
 					status: 0,
 					type: 'ERROR_UPDATE_RESTAURANT',
-					message: '更新商铺信息失败',
+					message: '更新商店信息失败',
 				})
 			}
 		})
 	}
-	// 删除餐馆
+	// 删除商店
 	async deleteResturant(req, res, next){
 		const restaurant_id = req.params.restaurant_id;
 		if (!restaurant_id || !Number(restaurant_id)) {
@@ -424,14 +424,14 @@ class Shop extends AddressComponent{
 			await ShopModel.remove({id: restaurant_id});
 			res.send({
 				status: 1,
-				success: '删除餐馆成功',
+				success: '删除商店成功',
 			})
 		}catch(err){
-			console.log('删除餐馆失败', err);
+			console.log('删除商店失败', err);
 			res.send({
 				status: 0,
 				type: 'DELETE_RESTURANT_FAILED',
-				message: '删除餐馆失败',
+				message: '删除商店失败',
 			})
 		}
 	}

@@ -68,13 +68,13 @@ export default [{
       path: '/city/:cityid',
       component: city
     },
-    //所有商铺列表页
+    //所有商店列表页
     {
       path: '/msite',
       component: msite,
       meta: { keepAlive: true },
     },
-    //特色商铺列表页
+    //特色商店列表页
     {
       path: '/food',
       component: food
@@ -84,18 +84,18 @@ export default [{
       path: '/search/:geohash',
       component: search
     },
-    //商铺详情页
+    //商店详情页
     {
       path: '/shop',
       component: shop,
       children: [{
-        path: 'foodDetail', //食品详情页
+        path: 'foodDetail', //商品详情页
         component: foodDetail,
       }, {
-        path: 'shopDetail', //商铺详情页
+        path: 'shopDetail', //商店详情页
         component: shopDetail,
         children: [{
-          path: 'shopSafe', //商铺安全认证页
+          path: 'shopSafe', //商店安全认证页
           component: shopSafe,
         },]
       }]

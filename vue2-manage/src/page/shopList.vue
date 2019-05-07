@@ -101,7 +101,7 @@
                           change-on-select
                         ></el-cascader>
                     </el-form-item>
-                    <el-form-item label="商铺图片" label-width="100px">
+                    <el-form-item label="商店图片" label-width="100px">
                         <el-upload
                           class="avatar-uploader"
                           :action="baseUrl + '/v1/addimg/shop'"
@@ -192,7 +192,7 @@
                         }
                     })
                 }catch(err){
-                    console.log('获取商铺种类失败', err);
+                    console.log('获取商店种类失败', err);
                 }
             },
             async getResturants(){
@@ -311,7 +311,7 @@
                         });
                     }
                 }catch(err){
-                    console.log('更新餐馆信息失败', err);
+                    console.log('更新商店信息失败', err);
                 }
             },
         },

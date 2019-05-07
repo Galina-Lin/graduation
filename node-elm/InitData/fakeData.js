@@ -8,7 +8,7 @@
     "phone": "13437850035",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -83,7 +83,7 @@
     "phone": "18609020902",
     "category": "小吃夜宵/烧烤",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -165,7 +165,7 @@
     "phone": "12345678901",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -247,7 +247,7 @@
     "phone": "13544323775",
     "category": "特色菜系/江浙菜",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -329,7 +329,7 @@
     "phone": "750",
     "category": "特色菜系/粤菜",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -411,7 +411,7 @@
     "phone": "2",
     "category": "小吃夜宵/烧烤",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -493,7 +493,7 @@
     "phone": "12345678",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -575,7 +575,7 @@
     "phone": "133333",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -657,7 +657,7 @@
     "phone": "13641266693",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -739,7 +739,7 @@
     "phone": "18232060789",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -829,7 +829,7 @@
     "phone": "618618",
     "category": "果蔬生鲜/水果",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -911,7 +911,7 @@
     "phone": "11111",
     "category": "快餐便当/简餐",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,
@@ -993,7 +993,7 @@
     "phone": "434343434",
     "category": "特色菜系/江浙菜",
     "supports": [{
-        "description": "已加入“外卖保”计划，食品安全有保障",
+        "description": "已加入“外卖保”计划，商品安全有保障",
         "icon_color": "999999",
         "icon_name": "保",
         "id": 7,

@@ -1,6 +1,6 @@
 'use strict';
 
-/* 食品分类 */
+/* 商品分类 */
 
 import mongoose from 'mongoose'
 import entryData from '../../InitData/entry'

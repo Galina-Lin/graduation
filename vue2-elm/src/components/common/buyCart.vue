@@ -47,7 +47,7 @@
                 'cartList'
             ]),
             /**
-             * 监听cartList变化，更新当前商铺的购物车信息shopCart，同时返回一个新的对象
+             * 监听cartList变化，更新当前商店的购物车信息shopCart，同时返回一个新的对象
              */
             shopCart: function (){
                 return Object.assign({},this.cartList[this.shopId]);

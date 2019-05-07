@@ -24,7 +24,6 @@
 						</section>
 						<section class="rating_order_num_right">
 							<span class="delivery_style delivery_left">认证商家</span>
-							<span class="delivery_style delivery_right" v-if="zhunshi(item.supports)">准时达</span>
 						</section>
 					</h5>
 					<h5 class="fee_distance">
@@ -170,7 +169,7 @@ export default {
 		},
 	},
 	watch: {
-		//监听父级传来的restaurantCategoryIds，当值发生变化的时候重新获取餐馆数据，作用于排序和筛选
+		//监听父级传来的restaurantCategoryIds，当值发生变化的时候重新获取商店数据，作用于排序和筛选
 		restaurantCategoryIds: function (value){
 			this.listenPropChange();
 		},

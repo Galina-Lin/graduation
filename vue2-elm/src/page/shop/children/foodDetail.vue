@@ -17,9 +17,9 @@
                 <p>
                     <!-- <span>月售 {{month_sales}}单</span> -->
                     <span>售价 ¥{{foods.specfoods[0].price}}</span>
-                    <span v-if="foods.specfoods.length">起</span>
+                    <!-- <span v-if="foods.specfoods.length">起</span> -->
                 </p>
-<!--                 <p>
+                <!-- <p>
                     <span>评论数 {{rating_count}}</span>
                     <span>好评率 {{satisfy_rate}}%</span>
                 </p> -->

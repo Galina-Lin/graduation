@@ -23,14 +23,14 @@ class Rating {
 			throw new Error(err);
 		}
 	}
-	// 根据餐馆id来获取参观的评价
+	// 根据商店id来获取参观的评价
 	async getRatings(req, res, next){
 		const restaurant_id = req.params.restaurant_id;
 		if (!restaurant_id || !Number(restaurant_id)) {
 			res.send({
 				status: 0,
 				type: 'ERROR_PARAMS',
-				message: '餐馆ID参数错误'
+				message: '商店ID参数错误'
 			})
 			return
 		}
@@ -42,18 +42,18 @@ class Rating {
 			res.send({
 				status: 0,
 				type: "ERROR_DATA",
-				message: '未找到当前餐馆的评论数据'
+				message: '未找到当前商店的评论数据'
 			})
 		}
 	}
-	// 根据餐馆id来获取参观的分数
+	// 根据商店id来获取参观的分数
 	async getScores(req, res, next){
 		const restaurant_id = req.params.restaurant_id;
 		if (!restaurant_id || !Number(restaurant_id)) {
 			res.send({
 				status: 0,
 				type: 'ERROR_PARAMS',
-				message: '餐馆ID参数错误'
+				message: '商店ID参数错误'
 			})
 			return
 		}
@@ -65,18 +65,18 @@ class Rating {
 			res.send({
 				status: 0,
 				type: "ERROR_DATA",
-				message: '未找到当前餐馆的评论数据'
+				message: '未找到当前商店的评论数据'
 			})
 		}
 	}
-	// 根据餐馆id来获取参观的标签
+	// 根据商店id来获取参观的标签
 	async getTags(req, res, next){
 		const restaurant_id = req.params.restaurant_id;
 		if (!restaurant_id || !Number(restaurant_id)) {
 			res.send({
 				status: 0,
 				type: 'ERROR_PARAMS',
-				message: '餐馆ID参数错误'
+				message: '商店ID参数错误'
 			})
 			return
 		}
@@ -88,7 +88,7 @@ class Rating {
 			res.send({
 				status: 0,
 				type: "ERROR_DATA",
-				message: '未找到当前餐馆的评论数据'
+				message: '未找到当前商店的评论数据'
 			})
 		}
 	}

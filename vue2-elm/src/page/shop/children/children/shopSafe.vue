@@ -1,11 +1,11 @@
  <template>
 	<div class="safe_shop">
-        <head-top head-title="食品监督安全公示" go-back='true'></head-top>
+        <head-top head-title="商品监督安全公示" go-back='true'></head-top>
         <section id="scroll_section" class="scroll_container">
             <section>
                 
                 <section class="shop_status_container">
-                    <header>食品监督安全公示</header>
+                    <header>商品监督安全公示</header>
                     <section class="shop_statu_detail">
                         <div>
                             <svg class="shop_status" v-if="shopDetail.status == 1">

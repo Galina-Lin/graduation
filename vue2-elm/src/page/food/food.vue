@@ -96,7 +96,7 @@
 									</svg>
 								</p>
 	    					</li>
-	    					<li class="sort_list_li">
+	    					<!--<li class="sort_list_li">
 	    						<svg>
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speed"></use>
 								</svg>
@@ -106,7 +106,7 @@
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
 									</svg>
 	    						</p>
-	    					</li>
+	    					</li> -->
 	    					<li class="sort_list_li">
 	    						<svg>
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating"></use>
@@ -122,6 +122,7 @@
 	    			</section>
 	    		</transition>
     		</div>
+			<!--
     		<div class="sort_item" :class="{choose_type:sortBy == 'activity'}">
     			<div class="sort_item_container" @click="chooseType('activity')">
 	    			<span :class="{category_title: sortBy == 'activity'}">筛选</span>
@@ -147,7 +148,7 @@
 	    				</footer>
 	    			</section>
 	    		</transition>
-    		</div>
+    		</div>-->
     	</section>
     	<transition name="showcover">
     		<div class="back_cover" v-show="sortBy"></div>
@@ -171,7 +172,7 @@ export default {
         	geohash: '', // city页面传递过来的地址geohash
             headTitle: '', // msiet页面头部标题
             foodTitle: '', // 排序左侧头部标题
-            restaurant_category_id: '', // 食品类型id值
+            restaurant_category_id: '', // 商品类型id值
             restaurant_category_ids: '', //筛选类型的id
             sortBy: '', // 筛选的条件
             category: null, // category分类左侧数据
@@ -180,7 +181,7 @@ export default {
             Delivery: null, // 配送方式数据
             Activity: null, // 商家支持活动数据
             delivery_mode: null, // 选中的配送方式
-            support_ids: [], // 选中的商铺活动列表
+            support_ids: [], // 选中的商店活动列表
             filterNum: 0, // 所选中的所有样式的集合
             confirmStatus: false, // 确认选择
         }
@@ -226,7 +227,7 @@ export default {
 			});
 			//获取筛选列表的配送方式
 			this.Delivery = await foodDelivery(this.latitude, this.longitude);
-			//获取筛选列表的商铺活动
+			//获取筛选列表的商店活动
 	    	this.Activity = await foodActivity(this.latitude, this.longitude);
 	    	//记录support_ids的状态，默认不选中，点击状态取反，status为true时为选中状态
 	    	this.Activity.forEach((item, index) => {
@@ -344,7 +345,7 @@ export default {
 		box-sizing: border-box;
 		.sort_item{
 			@include sc(0.7rem, #444);
-			@include wh(33.3%, 1.6rem);
+			@include wh(50%, 1.6rem);
 			text-align: center;
 			line-height: 1rem;
 			.sort_item_container{

@@ -14,7 +14,7 @@
 					</el-submenu>
 					<el-submenu index="3">
 						<template slot="title"><i class="el-icon-plus"></i>添加数据</template>
-						<el-menu-item index="addShop" v-if="this.adminInfo.status===2">添加商铺</el-menu-item>
+						<el-menu-item index="addShop" v-if="this.adminInfo.status===2">添加商店</el-menu-item>
 						<el-menu-item index="addGoods">添加商品</el-menu-item>
 					</el-submenu>
 					<el-submenu index="4" v-if="this.adminInfo.status===2">

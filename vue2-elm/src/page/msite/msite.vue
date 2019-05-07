@@ -8,7 +8,7 @@
 	    		</svg>
     		</router-link>
 			<router-link to="/home" slot="msite-title" class="msite_title">
-				<span class="title_text ellipsis">购物平台</span>
+				<span class="title_text ellipsis">电商平台</span>
 			</router-link>
     	</head-top>
     	<nav class="msite_nav">
@@ -53,8 +53,8 @@ export default {
         return {
         	geohash: '', // city页面传递过来的地址geohash
             msietTitle: '请选择地址...', // msiet页面头部标题
-            foodTypes: [], // 食品分类列表
-            hasGetData: false, //是否已经获取地理位置数据，成功之后再获取商铺列表信息
+            foodTypes: [], // 商品分类列表
+            hasGetData: false, //是否已经获取地理位置数据，成功之后再获取商店列表信息
             imgBaseUrl: 'http://localhost:8001/img/t/', //图片域名地址
         }
     },
@@ -76,7 +76,7 @@ export default {
     	this.hasGetData = true;
     },
     mounted(){
-        //获取导航食品类型列表
+        //获取导航商品类型列表
        	msiteFoodTypes(this.geohash).then(res => {
        		let resLength = res.length;
        		let resArr = [...res]; // 返回一个新的数组

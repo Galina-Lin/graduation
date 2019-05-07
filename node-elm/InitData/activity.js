@@ -8,7 +8,7 @@ name: "品牌商家",
 ranking_weight: 7
 },
 {
-description: "已加入“外卖保”计划，食品安全有保障",
+description: "已加入“外卖保”计划，商品安全有保障",
 icon_color: "999999",
 icon_name: "保",
 id: 7,
